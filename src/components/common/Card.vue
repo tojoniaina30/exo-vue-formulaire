@@ -21,6 +21,18 @@ export default {
     </div>
 </template>
 
-<style >
-    
+<style lang="scss" scoped>
+    .main{
+        width: max-content;
+        height: 100vh;
+        padding: 25px;
+        gap: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .card{
+        width: 227px;
+        height: 200px;
+    }
 </style>
