@@ -13,12 +13,17 @@ export default {
             title:'',
             desc:'',
             date:'',
+            language:'',
+            languages:[]
         }
     },
     methods: {
         handleAddUser() {
             this.$emit('addUser', {name: this.name, age:this.age, role:this.role})
         },
+        showSkill: function (skill) {
+            this.languages.push(skill)
+        }
     },
 }
 </script>
@@ -31,10 +36,13 @@ export default {
         <input type="text" placeholder="Email" v-model="email">
         <input type="text" placeholder="Age" v-model="age">
         <input type="text" placeholder="Role" v-model="role">
-        <input type="text" placeholder="Role" v-model="avatar">
+        <input type="text" placeholder="Avatar" v-model="avatar">
         <div class="form__skills">
             <input type="text" placeholder="Skills" v-model="skills">
-            <button >+</button>
+            <button v-on:click="showSkill(skills)">+</button>
+            <div class="skills-addes">
+                <p v-for="language in languages"> {{ language }} <img src="../../assets/trash.png" alt=""></p>
+            </div>
             
         </div>
         <div class="form__exp">
@@ -61,6 +69,8 @@ button{
     text-align: center;
     border-radius: inherit;
 }
+
+
 .form {
     width: 348px;
     height: 100vh;
@@ -84,7 +94,8 @@ button{
             right: 0;
             top: 0;
             bottom: 0;
-            
+            height: 50px;
+            border: inherit;
         }
     }
     &__exp {
@@ -95,7 +106,9 @@ button{
 
     }
 }
+.skills-added{
 
+}
 
 
 </style>
