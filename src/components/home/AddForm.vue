@@ -1,29 +1,47 @@
 <script>
 export default {
     name:"AddForm",
+    data() {
+        return {
+            firstname:'',
+            lastname:'',
+            email:'',
+            role:'',
+            age:'',
+            skills:'',
+            title:'',
+            desc:'',
+            date:'',
+        }
+    },
+    methods: {
+        handleAddUser() {
+            this.$emit('addUser', {name: this.name, age:this.age, role:this.role})
+        },
+    },
 }
 </script>
 
 <template >
-    <div class="form">
+    <div class="form" v-on:submit.prevent="handleAddUser">
         <h1>User Info</h1>
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Age">
-        <input type="text" placeholder="Role">
+        <input type="text" placeholder="First Name" v-model="firstname">
+        <input type="text" placeholder="Last Name" v-model="lastname">
+        <input type="text" placeholder="Email" v-model="email">
+        <input type="text" placeholder="Age" v-model="age">
+        <input type="text" placeholder="Role" v-model="role">
         <div class="form__skills">
-            <input type="text" placeholder="Skills">lol
+            <input type="text" placeholder="Skills" v-model="skills">
             <button >+</button>
             
         </div>
         <div class="form__exp">
-            <input type="text" placeholder="Experience Title">
-            <input type="text" placeholder="Experience description">
-            <input type="text" placeholder="Experience date">
+            <input type="text" placeholder="Experience Title" v-model="title">
+            <input type="text" placeholder="Experience description" v-model="desc">
+            <input type="text" placeholder="Experience date" v-model="date">
             <button >+</button>
         </div>
-        <button>Add user info</button>
+        <button type="submit">Add user info</button>
     </div>
 </template>
 
@@ -33,6 +51,7 @@ input {
     width: 286px;
     border: 2px solid black;
     color: black;
+    padding-left: 20px;
 }
 button{
     background: #2444B5;
@@ -45,7 +64,7 @@ button{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-right: 2px solid grey;
     
@@ -54,6 +73,9 @@ button{
         height: auto;
         display: flex;
         position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
         button{
             position:absolute;

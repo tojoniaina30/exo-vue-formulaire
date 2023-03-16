@@ -1,6 +1,7 @@
 <script>
 export default {
-    name:"name"
+    name:"name",
+    props:'allUsers',
 }
 </script>
 
@@ -8,7 +9,7 @@ export default {
     <div class="main">
         <div class="card">
             <div class="card__header">
-                <img src="" alt="">
+                <img src={{ avatar }} alt="">
                 <h2>{{ firstName }}  {{ lastName }}</h2>
                 <h3> {{ email }}</h3>
             </div>
