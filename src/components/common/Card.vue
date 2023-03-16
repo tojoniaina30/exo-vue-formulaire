@@ -8,11 +8,11 @@ export default {
 <template >
     <div class="main">
         <div class="card">
-            <div class="card__header">
-                <img src={{ avatar }} alt="">
-                <h2>{{ firstName }}  {{ lastName }}</h2>
-                <h3> {{ email }}</h3>
-            </div>
+            <div class="card__header" v-for="(user, index) in allUsers" :key="index">
+                <img src={{ user.avatar }} alt="">
+                <h2>{{ user.firstName }}  {{ user.lastName }}</h2>
+                <h3> {{ user.email }}</h3>
+            </div><!--  -->
             <div class="card__exp">
                 <h2><img src="../../assets/Untitled (22)/roles.png" alt="">{{ role }}</h2>
                 <h2><img src="../../assets/Untitled (22)/age.png" alt="">{{ age }}</h2>

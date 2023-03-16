@@ -8,6 +8,7 @@ export default {
             email:'',
             role:'',
             age:'',
+            avatar:'',
             skills:'',
             title:'',
             desc:'',
@@ -30,6 +31,7 @@ export default {
         <input type="text" placeholder="Email" v-model="email">
         <input type="text" placeholder="Age" v-model="age">
         <input type="text" placeholder="Role" v-model="role">
+        <input type="text" placeholder="Role" v-model="avatar">
         <div class="form__skills">
             <input type="text" placeholder="Skills" v-model="skills">
             <button >+</button>
