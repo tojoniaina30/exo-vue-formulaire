@@ -14,7 +14,10 @@ export default {
             desc:'',
             date:'',
             language:'',
-            languages:[]
+            languages:[],
+            user:{},
+            users:[],
+
         }
     },
     methods: {
@@ -23,6 +26,11 @@ export default {
         },
         showSkill: function (skill) {
             this.languages.push(skill)
+        },
+        deleteSkill: function () {
+            if (this.language){
+                this.language = false
+            }
         }
     },
 }
@@ -40,8 +48,8 @@ export default {
         <div class="form__skills">
             <input type="text" placeholder="Skills" v-model="skills">
             <button v-on:click="showSkill(skills)">+</button>
-            <div class="skills-addes">
-                <p v-for="language in languages"> {{ language }} <img src="../../assets/trash.png" alt=""></p>
+            <div class="skills-added">
+                <p v-for="language in languages"> {{ language }} <img v-if="language"  v-on:click="deleteSkill()" src="../../assets/trash.png" alt=""></p>
             </div>
             
         </div>
@@ -73,12 +81,13 @@ button{
 
 .form {
     width: 348px;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-right: 2px solid grey;
+    gap: 16px;
     
     &__skills {
         width: auto;
@@ -107,7 +116,11 @@ button{
     }
 }
 .skills-added{
+    
 
+    img {
+        cursor: pointer;
+    }
 }
 
 
