@@ -1,7 +1,7 @@
 <script>
 export default {
     name:"AddForm",
-    data() {
+    data:function() {
         return {
             firstname:'',
             lastname:'',
@@ -22,7 +22,17 @@ export default {
     },
     methods: {
         handleAddUser() {
-            this.$emit('addUser', {name: this.name, age:this.age, role:this.role})
+            this.$emit('addUser', {
+                firstname: this.firstname,
+                age:this.age,
+                email:this.email,
+                role:this.role,
+                avatar:this.avatar,
+                skills:this.skills,
+                title:this.title,
+                desc:this.desc,
+                date:this.date,
+            })
         },
         showSkill: function (skill) {
             this.languages.push(skill)

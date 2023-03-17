@@ -18,6 +18,12 @@ export default{
 
 
 <style >
+body{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
   body{
     display: flex;
     flex-direction: row;
