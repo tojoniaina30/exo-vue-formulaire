@@ -21,9 +21,11 @@ export default {
         }
     },
     methods: {
-        handleAddUser() {
+        handleAddUser(event) {
+            event.preventDefault();
             this.$emit('addUser', {
                 firstname: this.firstname,
+                lastname: this.firstname,
                 age:this.age,
                 email:this.email,
                 role:this.role,
@@ -47,7 +49,7 @@ export default {
 </script>
 
 <template >
-    <div class="form" v-on:submit.prevent="handleAddUser">
+    <div class="form" >
         <h1>User Info</h1>
         <input type="text" placeholder="First Name" v-model="firstname">
         <input type="text" placeholder="Last Name" v-model="lastname">
@@ -69,7 +71,7 @@ export default {
             <input type="text" placeholder="Experience date" v-model="date">
             <button >+</button>
         </div>
-        <button type="submit">Add user info</button>
+        <button type="submit" v-on:click="handleAddUser">Add user info</button>
     </div>
 </template>
 

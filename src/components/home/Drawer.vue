@@ -9,6 +9,7 @@ export default {
 
 <template >
     <div class="draw">
+        <button class="close">X</button>
         <Card/>
         <div class="exp">
             <img src="../../assets/Ellipse 2.png" alt="">
@@ -32,6 +33,7 @@ p{
     font-size: 14px;
     line-height: 16px;
 }
+
 .draw{
     display: flex;
     flex-direction: column;
@@ -42,7 +44,14 @@ p{
     top: 0;
     bottom: 0;
     left: auto;
-    border: 2px solid black;
+    box-shadow: -2px 0px 20px 20px rgba(0, 0, 0, 0.16);
+}
+.close{
+    position: absolute;
+    top: 5px;
+    left: auto;
+    right: 10px;
+    padding: 10px 20px;
 }
 .exp{
     margin: 5px 59px 0px;

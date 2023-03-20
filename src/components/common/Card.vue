@@ -6,36 +6,68 @@ export default {
 </script>
 
 <template >
-
-    <div class="card" v-for="(user, index) in allUsers" :key="index">
+    
+ <div class="card" v-for="(user, index) in allUsers" :key="index">
         <div class="card__header">
-            <img src={{ user.avatar }} alt="">
-            <h2>{{ user.firstName }}  {{ user.lastName }}name </h2>
-            <h3> {{ user.email }}email</h3>
-        </div><!--  -->
-        <div class="card__exp">
-            <h2><img src="../../assets/Untitled (22)/roles.png" alt="">{{ user.role }}admin</h2>
-            <h2><img src="../../assets/Untitled (22)/age.png" alt="">{{ user.age }}23</h2>
-            <h2><img src="../../assets/Untitled (22)/skills.png" alt="">{{ user.skills }}scss</h2>
+            <div>
+                <img :src="user.avatar" alt="">
+            </div>
+            <div>
+                <h2>{{ user.firstname }}  {{ user.lastname }} </h2>
+                <h3> {{ user.email }}</h3>
+            </div>
+            
         </div>
-    </div>
+        <div class="card__exp">
+            <h2><img src="../../assets/Untitled (22)/Frame-1.png" alt="">{{ user.role }}</h2>
+            <h2><img src="../../assets/Untitled (22)/Frame-2.png" alt="">{{ user.age }}</h2>
+            <h2><img src="../../assets/Untitled (22)/Frame.png" alt="">{{ user.skills }}</h2>
+        </div>
+</div>
 
 </template>
 
 <style lang="scss" scoped>
-    
+h2 {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+h3{
+    font-size: 12px;
+    color: #9A9A9A;
+    line-height: 14px;
+}
 .card{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-around;
     width: 227px;
     height: 200px;
     border: 2px solid red;
-    &__header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-end;
-    }
+
 }
+
+.card__header {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+
+    img{
+        width: 45px;
+        height: 45px;
+    }
+    }
+.card__exp {
+
+    h2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+    }
+    }
 </style>
