@@ -1,4 +1,6 @@
 <script>
+import { nanoid } from 'nanoid'
+
 export default {
     name:"AddForm",
     data:function() {
@@ -34,6 +36,7 @@ export default {
                 title:this.title,
                 desc:this.desc,
                 date:this.date,
+                id:nanoid()
             })
         },
         showSkill: function (skill) {

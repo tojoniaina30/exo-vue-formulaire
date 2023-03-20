@@ -1,13 +1,20 @@
 <script>
 export default {
     name:"Card",
-    props:['allUsers','msg'],
+    props:['allUsers'],
+    methods: {
+        handleClick($event) {
+            let userFound = this.allUsers.filter((user) => user.id === $event.target.id)[0]
+            this.$emit('showDrawer', userFound)
+        }
+},
 }
+
 </script>
 
 <template >
     
- <div class="card" v-for="(user, index) in allUsers" :key="index">
+ <div class="card" v-for="(user, index) in allUsers" :key="index" @click.stop="$event => handleClick($event)" :id="user.id">
         <div class="card__header">
             <div>
                 <img :src="user.avatar" alt="">
@@ -32,12 +39,14 @@ h2 {
     font-size: 14px;
     line-height: 16px;
     color: #000000;
+    pointer-events: none;
 }
 
 h3{
     font-size: 12px;
     color: #9A9A9A;
     line-height: 14px;
+    pointer-events: none;
 }
 .card{
     display: flex;
@@ -54,13 +63,16 @@ h3{
     display: flex;
     align-items: center;
     gap: 21px;
+    pointer-events: none;
 
     img{
         width: 45px;
         height: 45px;
+        pointer-events: none;
     }
     }
 .card__exp {
+    pointer-events: none;
 
     h2 {
         display: flex;
@@ -69,6 +81,7 @@ h3{
         font-size: 14px;
         line-height: 16px;
         color: #000000;
+        pointer-events: none;
     }
     }
 </style>

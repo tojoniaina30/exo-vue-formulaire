@@ -3,17 +3,24 @@ import Card from '../common/Card.vue';
 
 export default {
     name:"Drawer",
-    components: { Card }
+    props:[
+        "user"
+    ],
+    components: { Card },
+
 }
 </script>
 
 <template >
     <div class="draw">
         <button class="close">X</button>
-        <Card/>
+        <div class="cardEdit">
+            <Card :allUsers="[user]"/>
+        </div>
+        
         <div class="exp">
             <img src="../../assets/Ellipse 2.png" alt="">
-            <p>2020 - 2023</p>
+            <p>{{ user.date }}</p>
             <p>SAHA Technology</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -76,5 +83,8 @@ p{
         left: -8.75px;
 
     }
+}
+.cardEdit{
+    pointer-events: none;
 }
 </style>
