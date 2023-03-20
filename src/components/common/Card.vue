@@ -46,6 +46,7 @@ h3{
     width: 227px;
     height: 200px;
     border: 2px solid red;
+    cursor: pointer;
 
 }
 

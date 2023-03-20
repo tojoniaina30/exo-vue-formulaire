@@ -61,7 +61,9 @@ export default {
             <input type="text" placeholder="Skills" v-model="skills">
             <button v-on:click="showSkill(skills)">+</button>
             <div class="skills-added">
-                <p v-for="language in languages"> {{ language }} <img v-if="language"  v-on:click="deleteSkill()" src="../../assets/trash.png" alt=""></p>
+                <p v-for="language in languages"> {{ language }}
+                    <img v-if="language" v-on:click="deleteSkill()" src="../../assets/trash.png" alt="">
+                </p>
             </div>
             
         </div>
@@ -76,6 +78,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+div {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+
+}
 input {
     height: 45px;
     width: 286px;
@@ -128,10 +136,31 @@ button{
     }
 }
 .skills-added{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 274px;
+    margin-top: 26px;
     
+    p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 9px;
+        width: 234px;
+        background: #DDE3EB;
+    }
 
     img {
+        padding-left: 12px;
+        padding-right: 12px;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        background-color: #DDE3EB;
     }
 }
 
