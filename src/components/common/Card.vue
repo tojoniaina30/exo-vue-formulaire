@@ -14,7 +14,8 @@ export default {
 
 <template >
     
- <div class="card" v-for="(user, index) in allUsers" :key="index" @click.stop="$event => handleClick($event)" :id="user.id">
+ <div class="card" v-for="(user, index) in allUsers" :key="index" 
+    @click.stop="$event => handleClick($event)" :id="user.id">
         <div class="card__header">
             <div>
                 <img :src="user.avatar" alt="">
@@ -54,9 +55,8 @@ h3{
     justify-content: space-around;
     width: 227px;
     height: 200px;
-    border: 2px solid red;
     cursor: pointer;
-
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.16);
 }
 
 .card__header {
@@ -82,6 +82,7 @@ h3{
         line-height: 16px;
         color: #000000;
         pointer-events: none;
+        gap: 8px;
     }
     }
 </style>

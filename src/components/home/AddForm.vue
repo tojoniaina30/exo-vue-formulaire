@@ -27,7 +27,7 @@ export default {
             event.preventDefault();
             this.$emit('addUser', {
                 firstname: this.firstname,
-                lastname: this.firstname,
+                lastname: this.lastname,
                 age:this.age,
                 email:this.email,
                 role:this.role,
